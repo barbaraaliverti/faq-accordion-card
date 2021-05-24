@@ -1,4 +1,104 @@
+@import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap');
+
+//colors
+$primary-color: hsl(238, 29%, 16%);
+$secondary-color: hsl(14, 88%, 65%);
+
+//background
+$background-violet: hsl(273, 75%, 66%);
+$background-blue:  hsl(240, 73%, 65%);
+
+//text
+$text-neutral-very-dark: hsl(237, 12%, 33%);
+$text-neutral-dark: hsl(240, 6%, 50%);
+
+$dividers: hsl(240, 5%, 91%);
+
+$body-font-size: 12px;
+
+$font-stack: 'Kumbh Sans', sans-serif;
+
+/* 
+http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+
 body {
-    margin: 0;
-    padding: 0;
+    font-family: $font-stack;
+    font-size: $body-font-size;
+}
+
+#page-wrapper {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-image: linear-gradient($background-violet, $background-blue);
+    height: 100vh;
+    width: 100vw;    
+}
+
+#img-wrapper {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    position: relative;
+
+    :first-child {
+        
+    }
+}
+
+#content-wrapper {
+    align-items: center;
+    background-color: whitesmoke;
+    border-radius: 25px;
+    display: flex;
+    width: 50vw;
+}
+
+#faq {
+    display: flex;
+    flex-direction: column;
+    padding: 10em 5em;
+
+    h1 {
+        color: $text-neutral-very-dark;
+        font-size: 2.5em;
+        font-weight: 700;
+        padding: 1em 0;
+    }
+
+    li {
+        color: $text-neutral-dark;
+        font-weight: 400;
+        list-style: none;
+    }
+
+}
+
+.question {
+    border-bottom: 2px solid $dividers;
+    padding: 1em 0;
 }
