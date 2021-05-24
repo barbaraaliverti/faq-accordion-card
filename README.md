@@ -1,2 +1,5 @@
-# faq-accordion-card
-A challenge from FrontEndMentor.io
+# FAQ Accordion Card
+
+Um desafio do https://www.frontendmentor.io :)
+
+A challenge from https://www.frontendmentor.io :)
