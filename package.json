@@ -1,0 +1,27 @@
+{
+  "name": "faq-accordion-cards",
+  "version": "1.0.0",
+  "description": "Front-end project",
+  "main": "index.js",
+  "scripts": {
+    "sass": "node-sass -w scss/ -o css/ --recursive"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/barbaraaliverti/faq-accordion-card.git"
+  },
+  "keywords": [
+    "frontend",
+    "css",
+    "html"
+  ],
+  "author": "Barbara Aliverti",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/barbaraaliverti/faq-accordion-card/issues"
+  },
+  "homepage": "https://github.com/barbaraaliverti/faq-accordion-card#readme",
+  "dependencies": {
+    "node-sass": "^6.0.0"
+  }
+}
