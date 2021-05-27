@@ -42,7 +42,6 @@ time, mark, audio, video {
 	border: 0;
 	font-size: 100%;
 	font: inherit;
-	vertical-align: baseline;
 }
 
 body {
@@ -60,13 +59,36 @@ body {
     width: 100vw;    
 }
 
+/*Overlapping images using grid from https://bricampgomez.com/blog/how-to-overlap-images-in-css/*/
+
 #img-wrapper {
     display: grid;
     grid-template-columns: repeat(12, 1fr);
     position: relative;
+    height: 100%;
+    width: 50%;
 
-    :first-child {
-        
+    div {
+        grid-row: 1;
+    }
+
+    div:nth-child(1) {
+        grid-column: 1/-1;
+    }
+
+    div:nth-child(2) {
+        grid-column: 1/12;
+    }   
+
+    div:nth-child(3) {
+        grid-column: 1/span 5;
+        text-indent: -45%;
+        padding-top: 50%;
+    }
+    
+    img {
+        width: 100%;
+        height: 100%;
     }
 }
 
@@ -75,13 +97,67 @@ body {
     background-color: whitesmoke;
     border-radius: 25px;
     display: flex;
-    width: 50vw;
+    height: 70%;
+    width: 60%;    
 }
 
 #faq {
-    display: flex;
-    flex-direction: column;
     padding: 10em 5em;
+
+    input[type='checkbox'] {
+        display: none;
+    }
+
+    .wrap-accordion {
+        border-bottom: 1px solid $dividers;
+    }
+
+    .lbl-toggle {
+        display: block;
+        color: $text-neutral-very-dark;
+        cursor: pointer;
+        padding: 1rem 0;
+        transition: all 0.25s ease-out;      
+
+        &:hover {
+            color: $secondary-color;
+            font-weight: 700;
+        }
+
+        //add arrow as a pesudo-element
+        &::after {
+            content: url(/home/barbara/dev/faq-accordion-cards/faq-accordion-card/faq-accordion-card-main/images/icon-arrow-down.svg);
+            display: inline-block;
+            vertical-align: middle;
+            padding: 0 0.5rem;
+            transition: transform .2s ease-out;
+        }
+    }
+
+    //toggle arrow direction
+    .toggle:checked + .lbl-toggle::after {
+        transform: rotate(-180deg) translateY(3px);
+    }
+
+    //hide answers
+    .accordion-content {
+        color: $text-neutral-dark;        
+        max-height: 0px;
+        overflow: hidden;
+        transition: all .25s ease-in-out;
+    }
+
+
+    //show answers
+    .toggle:checked + .lbl-toggle + .accordion-content {
+        padding-bottom: 1rem;
+        max-height: max-content;
+    }
+
+    .toggle:checked + .lbl-toggle {
+        font-weight: 700;
+    }
+
 
     h1 {
         color: $text-neutral-very-dark;
@@ -90,15 +166,10 @@ body {
         padding: 1em 0;
     }
 
-    li {
-        color: $text-neutral-dark;
-        font-weight: 400;
-        list-style: none;
-    }
-
 }
 
 .question {
     border-bottom: 2px solid $dividers;
     padding: 1em 0;
 }
+

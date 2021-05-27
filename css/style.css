@@ -21,8 +21,7 @@ time, mark, audio, video {
   padding: 0;
   border: 0;
   font-size: 100%;
-  font: inherit;
-  vertical-align: baseline; }
+  font: inherit; }
 
 body {
   font-family: "Kumbh Sans", sans-serif;
@@ -37,31 +36,73 @@ body {
   height: 100vh;
   width: 100vw; }
 
+/*Overlapping images using grid from https://bricampgomez.com/blog/how-to-overlap-images-in-css/*/
 #img-wrapper {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
-  position: relative; }
+  position: relative;
+  height: 100%;
+  width: 50%; }
+  #img-wrapper div {
+    grid-row: 1; }
+  #img-wrapper div:nth-child(1) {
+    grid-column: 1/-1; }
+  #img-wrapper div:nth-child(2) {
+    grid-column: 1/12; }
+  #img-wrapper div:nth-child(3) {
+    grid-column: 1/span 5;
+    text-indent: -45%;
+    padding-top: 50%; }
+  #img-wrapper img {
+    width: 100%;
+    height: 100%; }
 
 #content-wrapper {
   align-items: center;
   background-color: whitesmoke;
   border-radius: 25px;
   display: flex;
-  width: 50vw; }
+  height: 70%;
+  width: 60%; }
 
 #faq {
-  display: flex;
-  flex-direction: column;
   padding: 10em 5em; }
+  #faq input[type='checkbox'] {
+    display: none; }
+  #faq .wrap-accordion {
+    border-bottom: 1px solid #e7e7e9; }
+  #faq .lbl-toggle {
+    display: block;
+    color: #4a4b5e;
+    cursor: pointer;
+    padding: 1rem 0;
+    transition: all 0.25s ease-out; }
+    #faq .lbl-toggle:hover {
+      color: #f47c57;
+      font-weight: 700; }
+    #faq .lbl-toggle::after {
+      content: url(/home/barbara/dev/faq-accordion-cards/faq-accordion-card/faq-accordion-card-main/images/icon-arrow-down.svg);
+      display: inline-block;
+      vertical-align: middle;
+      padding: 0 0.5rem;
+      transition: transform .2s ease-out; }
+  #faq .toggle:checked + .lbl-toggle::after {
+    transform: rotate(-180deg) translateY(3px); }
+  #faq .accordion-content {
+    color: #787887;
+    max-height: 0px;
+    overflow: hidden;
+    transition: all .25s ease-in-out; }
+  #faq .toggle:checked + .lbl-toggle + .accordion-content {
+    padding-bottom: 1rem;
+    max-height: max-content; }
+  #faq .toggle:checked + .lbl-toggle {
+    font-weight: 700; }
   #faq h1 {
     color: #4a4b5e;
     font-size: 2.5em;
     font-weight: 700;
     padding: 1em 0; }
-  #faq li {
-    color: #787887;
-    font-weight: 400;
-    list-style: none; }
 
 .question {
   border-bottom: 2px solid #e7e7e9;
