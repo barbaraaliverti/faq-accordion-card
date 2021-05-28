@@ -62,11 +62,16 @@ body {
   background-color: whitesmoke;
   border-radius: 25px;
   display: flex;
-  height: 70%;
-  width: 60%; }
+  height: 35rem;
+  width: 70rem; }
 
 #faq {
-  padding: 10em 5em; }
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-right: 5rem;
+  height: 100%;
+  width: 40%; }
   #faq input[type='checkbox'] {
     display: none; }
   #faq .wrap-accordion {
@@ -76,6 +81,7 @@ body {
     color: #4a4b5e;
     cursor: pointer;
     padding: 1rem 0;
+    position: relative;
     transition: all 0.25s ease-out; }
     #faq .lbl-toggle:hover {
       color: #f47c57;
@@ -85,6 +91,8 @@ body {
       display: inline-block;
       vertical-align: middle;
       padding: 0 0.5rem;
+      position: absolute;
+      right: 0;
       transition: transform .2s ease-out; }
   #faq .toggle:checked + .lbl-toggle::after {
     transform: rotate(-180deg) translateY(3px); }
@@ -95,15 +103,20 @@ body {
     transition: all .25s ease-in-out; }
   #faq .toggle:checked + .lbl-toggle + .accordion-content {
     padding-bottom: 1rem;
-    max-height: max-content; }
+    max-height: 3rem; }
   #faq .toggle:checked + .lbl-toggle {
     font-weight: 700; }
   #faq h1 {
     color: #4a4b5e;
-    font-size: 2.5em;
-    font-weight: 700;
-    padding: 1em 0; }
+    font-size: 2rem;
+    font-weight: 700; }
 
-.question {
-  border-bottom: 2px solid #e7e7e9;
-  padding: 1em 0; }
+@media screen and (max-width: 375px) {
+  #content-wrapper {
+    align-items: center;
+    background-color: whitesmoke;
+    border-radius: 25px;
+    display: flex;
+    flex-direction: column;
+    height: 80vh;
+    width: 90vw; } }
