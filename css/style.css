@@ -31,47 +31,44 @@ body {
   align-items: center;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: start;
   background-image: linear-gradient(#af67e9, #6565e7);
   height: 100vh;
-  width: 100vw; }
+  width: 100vw;
+  overflow-y: scroll; }
 
 /*Overlapping images using grid from https://bricampgomez.com/blog/how-to-overlap-images-in-css/*/
-#img-wrapper {
+#img-wrapper-desktop {
+  display: none; }
+
+#img-wrapper-mobile {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
-  position: relative;
-  height: 100%;
-  width: 50%; }
-  #img-wrapper div {
+  position: relative; }
+  #img-wrapper-mobile div {
     grid-row: 1; }
-  #img-wrapper div:nth-child(1) {
-    grid-column: 1/-1; }
-  #img-wrapper div:nth-child(2) {
-    grid-column: 1/12; }
-  #img-wrapper div:nth-child(3) {
-    grid-column: 1/span 5;
-    text-indent: -45%;
-    padding-top: 50%; }
-  #img-wrapper img {
-    width: 100%;
-    height: 100%; }
+  #img-wrapper-mobile div:nth-child(1) {
+    grid-column: 2/12; }
+  #img-wrapper-mobile div:nth-child(2) {
+    grid-column: 1/12;
+    margin: -40% 0; }
 
 #content-wrapper {
   align-items: center;
   background-color: whitesmoke;
   border-radius: 25px;
   display: flex;
-  height: 35rem;
-  width: 70rem; }
+  flex-direction: column;
+  margin-top: 10rem;
+  margin-bottom: 3rem;
+  width: 90vw; }
 
 #faq {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin-right: 5rem;
   height: 100%;
-  width: 40%; }
+  padding: 0 1rem 3rem 1rem; }
   #faq input[type='checkbox'] {
     display: none; }
   #faq .wrap-accordion {
@@ -109,14 +106,68 @@ body {
   #faq h1 {
     color: #4a4b5e;
     font-size: 2rem;
-    font-weight: 700; }
+    font-weight: 700;
+    text-align: center;
+    padding: 1.25rem 0; }
 
-@media screen and (max-width: 375px) {
+.attribution {
+  padding: 1rem 0; }
+
+@media screen and (min-width: 800px) {
   #content-wrapper {
     align-items: center;
     background-color: whitesmoke;
     border-radius: 25px;
     display: flex;
-    flex-direction: column;
-    height: 80vh;
-    width: 90vw; } }
+    flex-direction: row;
+    margin: 0;
+    height: 66%;
+    width: 60%; }
+  #img-wrapper-mobile {
+    display: none; }
+  #img-wrapper-desktop {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    position: relative;
+    height: 100%;
+    width: 50%; }
+    #img-wrapper-desktop div {
+      grid-row: 1; }
+    #img-wrapper-desktop div:nth-child(1) {
+      grid-column: 1/-1; }
+    #img-wrapper-desktop div:nth-child(2) {
+      grid-column: 1/12; }
+    #img-wrapper-desktop div:nth-child(3) {
+      grid-column: 1/span 5;
+      text-indent: -45%;
+      padding-top: 50%; }
+    #img-wrapper-desktop img {
+      width: 100%;
+      height: 100%; }
+  #faq {
+    justify-content: center;
+    font-size: 1rem;
+    padding: 0;
+    width: 50%; }
+    #faq h1 {
+      text-align: left;
+      margin: 5% 0;
+      padding: 0; }
+    #faq #accordion-container {
+      height: 60%;
+      margin-right: 15%;
+      overflow-x: hidden;
+      overflow-y: scroll; }
+  #page-wrapper {
+    justify-content: center;
+    overflow: hidden; }
+  .attribution {
+    font-size: 0.75rem;
+    text-align: center;
+    color: black;
+    position: absolute;
+    bottom: 3%; }
+    .attribution a {
+      color: #f47c57;
+      font-weight: bold;
+      text-underline-offset: 3px; } }

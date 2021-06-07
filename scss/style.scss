@@ -53,43 +53,37 @@ body {
     align-items: center;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: start;
     background-image: linear-gradient($background-violet, $background-blue);
     height: 100vh;
-    width: 100vw;    
+    width: 100vw;
+    overflow-y: scroll;
 }
 
 /*Overlapping images using grid from https://bricampgomez.com/blog/how-to-overlap-images-in-css/*/
 
-#img-wrapper {
+#img-wrapper-desktop {
+    display: none;
+}
+
+#img-wrapper-mobile {
     display: grid;
     grid-template-columns: repeat(12, 1fr);
-    position: relative;
-    height: 100%;
-    width: 50%;
+    position: relative;   
 
     div {
         grid-row: 1;
     }
 
     div:nth-child(1) {
-        grid-column: 1/-1;
+        grid-column: 2/12;
     }
 
     div:nth-child(2) {
         grid-column: 1/12;
-    }   
-
-    div:nth-child(3) {
-        grid-column: 1/span 5;
-        text-indent: -45%;
-        padding-top: 50%;
+        margin: -40% 0;
     }
     
-    img {
-        width: 100%;
-        height: 100%;
-    }
 }
 
 #content-wrapper {
@@ -97,17 +91,19 @@ body {
     background-color: whitesmoke;
     border-radius: 25px;
     display: flex;
-    height: 35rem;
-    width: 70rem;    
+    flex-direction: column;
+    margin-top: 10rem;
+    margin-bottom: 3rem;
+    width: 90vw;
 }
 
 #faq {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    margin-right: 5rem;
+    justify-content: center;    
     height: 100%;
-    width: 40%;
+    padding: 0 1rem 3rem 1rem;
+    
 
     input[type='checkbox'] {
         display: none;
@@ -171,19 +167,103 @@ body {
         color: $text-neutral-very-dark;
         font-size: 2rem;
         font-weight: 700;
+        text-align: center;
+        padding: 1.25rem 0;
     }
 
 }
 
-@media screen and (max-width: 375px) {
+.attribution {
+    padding: 1rem 0;
+}
+
+@media screen and (min-width: 800px) {
+
     #content-wrapper {
         align-items: center;
         background-color: whitesmoke;
         border-radius: 25px;
         display: flex;
-        flex-direction: column;
-        height: 80vh;
-        width: 90vw;    
+        flex-direction: row;
+        margin: 0;
+        height: 66%;
+        width: 60%;
     }
+
+    #img-wrapper-mobile {
+        display: none;
+    }
+
+    #img-wrapper-desktop {
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+        position: relative;
+        height: 100%;
+        width: 50%;
+    
+        div {
+            grid-row: 1;
+        }
+    
+        div:nth-child(1) {
+            grid-column: 1/-1;
+        }
+    
+        div:nth-child(2) {
+            grid-column: 1/12;
+        }   
+    
+        div:nth-child(3) {
+            grid-column: 1/span 5;
+            text-indent: -45%;
+            padding-top: 50%;
+        }
+        
+        img {
+            width: 100%;
+            height: 100%;
+        }
+    }
+        
+    #faq {
+        justify-content: center;
+        font-size: 1rem;
+        padding: 0;
+        width: 50%;
+
+        h1 {
+            text-align: left;
+            margin: 5% 0;
+            padding: 0;
+        }
+
+        #accordion-container {
+            height: 60%;
+            margin-right: 15%;            
+            overflow-x: hidden;
+            overflow-y: scroll;
+            
+      }
+    }
+
+    #page-wrapper {
+        justify-content: center;
+        overflow: hidden;
+    }
+
+    .attribution {
+        font-size: 0.75rem;
+        text-align: center;
+        color: black;
+        position: absolute;
+        bottom: 3%;
+
+        a {
+            color: $secondary-color;
+            font-weight: bold;
+            text-underline-offset: 3px;
+        }
+    }
+       
 }
 
