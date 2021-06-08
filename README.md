@@ -14,7 +14,6 @@ This is a solution to the [FAQ accordion card challenge on Frontend Mentor](http
   - [Continued development](#continued-development)
   - [Useful resources](#useful-resources)
 - [Author](#author)
-- [Acknowledgments](#acknowledgments)
 
 ## Overview
 
@@ -32,14 +31,14 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- [Solution URL](https://faq-accordion-card-umber-five.vercel.app/)
 
 ## My process
 
 ### Built with
 
 - Semantic HTML5 markup
+- SASS
 - CSS custom properties
 - Flexbox
 - CSS Grid
@@ -47,64 +46,42 @@ Users should be able to:
 
 ### What I learned
 
-Use this section to recap over some of your major learnings while working through this project. Writing these out and providing code samples of areas you want to highlight is a great way to reinforce your own knowledge.
+This was my first project from [Front End Mentor](https://www.frontendmentor.io/) and I chose what I thought would be a pretty simple one, but I ended up learning so much from it! 
 
-To see how you can add code snippets, see below:
+First, I realized I didn't know how to deal properly with SVG, so I had to study how to manipulate them - how to insert them in my code, how to resize them and how to overlap them.  I chose to use CSS grid to overlap the images and I was very happy ewith the result.
 
-```html
-<h1>Some HTML code I'm proud of</h1>
-```
+Another challenge was to make the accordion Q&A using only CSS. I ended up using checkboxes and although I like the result, I couln't find a way to leave only one answer open at the time. I could've done it with radio buttons, but them I wouldn't be able to hide the answers when clicking on the arrows.
+
 ```css
-.proud-of-this-css {
-  color: papayawhip;
-}
-```
-```js
-const proudOfThisFunc = () => {
-  console.log('🎉')
-}
-```
+  //hide answers
+    .accordion-content {
+        color: $text-neutral-dark;        
+        max-height: 0px;
+        overflow: hidden;
+        transition: all .25s ease-in-out;
+    }
 
-If you want more help with writing markdown, we'd recommend checking out [The Markdown Guide](https://www.markdownguide.org/) to learn more.
+    //show answers
+    .toggle:checked + .lbl-toggle + .accordion-content {
+        padding-bottom: 1rem;
+        max-height: 3rem;
+    }
+```
+Finally, it was my first time using SASS in a project and I loved it :) So much easier to organize the styling. 
 
-**Note: Delete this note and the content within this section and replace with your own learnings.**
 
 ### Continued development
 
-Use this section to outline areas that you want to continue focusing on in future projects. These could be concepts you're still not completely comfortable with or techniques you found useful that you want to refine and perfect.
-
-**Note: Delete this note and the content within this section and replace with your own plans for continued development.**
+I wanted to make only one answer visible at a time, but I couldn't find a way to achieve this using CSS only. I might do some extra digging later or finally add some JS to fix this and make the accordion prettier. 
 
 ### Useful resources
 
-- [Example resource 1](https://www.example.com) - This helped me for XYZ reason. I really liked this pattern and will use it going forward.
-- [Example resource 2](https://www.example.com) - This is an amazing article which helped me finally understand XYZ. I'd recommend it to anyone still learning this concept.
-
-**Note: Delete this note and replace the list above with resources that helped you during the challenge. These could come in handy for anyone viewing your solution or for yourself when you look back on this project in the future.**
+- [Scaling SVG on CSS Tricks](https://css-tricks.com/scale-svg/) and [How to use SVG (in portuguese) from Willian Justen](https://willianjusten.com.br/como-usar-svg/)- These helped me to understand how to scale my SVG!
+- [How to overlap images in CSS on Bricampgomez](https://bricampgomez.com/blog/how-to-overlap-images-in-css/) - Interesting way to overlap images using CSS grid.
+- [How to create a responsive SVG (in portuguese) from Willian Justen](https://willianjusten.com.br/criando-svg-responsivo/) - This article helped me to understand how to make my svg responsive (although I ended up using two different image compositions for desktop and mobile)
+- [Checkbox hack](https://css-tricks.com/the-checkbox-hack/#faq-answer-revealing) - this is where I got the checkbox hack from to build reaveling answers :) very interesting!
 
 ## Author
 
-- Website - [Add your name here](https://www.your-site.com)
-- Frontend Mentor - [@yourusername](https://www.frontendmentor.io/profile/yourusername)
-- Twitter - [@yourusername](https://www.twitter.com/yourusername)
-
-**Note: Delete this note and add/remove/edit lines above based on what links you'd like to share.**
-
-## Acknowledgments
-
-This is where you can give a hat tip to anyone who helped you out on this project. Perhaps you worked in a team or got some inspiration from someone else's solution. This is the perfect place to give them some credit.
-
-**Note: Delete this note and edit this section's content as necessary. If you completed this challenge by yourself, feel free to delete this section entirely.**
-
-
-Useful links:
-
-https://css-tricks.com/scale-svg/
-
-https://bricampgomez.com/blog/how-to-overlap-images-in-css/
-
-https://willianjusten.com.br/criando-svg-responsivo/
-
-https://willianjusten.com.br/como-usar-svg/
-
-https://css-tricks.com/the-checkbox-hack/#faq-answer-revealing
+- [Portfolio](https://barbaraaliverti.github.io/)
+- [LinkedIn](https://www.linkedin.com/in/barbaraaliverti)
