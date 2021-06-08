@@ -85,7 +85,7 @@ body {
       color: #f47c57;
       font-weight: 700; }
     #faq .lbl-toggle::after {
-      content: url(./faq-accordion-card-main/images/icon-arrow-down.svg);
+      content: url(../faq-accordion-card-main/images/icon-arrow-down.svg);
       display: inline-block;
       vertical-align: middle;
       padding: 0 0.5rem;
