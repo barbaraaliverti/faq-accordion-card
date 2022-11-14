@@ -260,11 +260,31 @@ body {
 
         #accordion-container {
             max-height: 60%;
-            margin-right: 15%;            
+            margin-right: 15%;
+            padding-right: 15px; 
             overflow-x: hidden;
-            overflow-y: scroll;
+            overflow-y: auto;
             
-      }
+            &::-webkit-scrollbar {
+                width: 10px;
+            }
+            
+            /* Track */
+            &::-webkit-scrollbar-track {
+                background: #f1f1f1; 
+            }
+            
+            /* Handle */
+            &::-webkit-scrollbar-thumb {
+                background: darkgray;
+                border-radius: 15px;
+            }
+            
+            /* Handle on hover */
+            &::-webkit-scrollbar-thumb:hover {
+                background: gray; 
+            }
+        }
     }
 
     #page-wrapper {
@@ -277,6 +297,5 @@ body {
         padding: 0;
         position: fixed;
     }
-       
 }
 

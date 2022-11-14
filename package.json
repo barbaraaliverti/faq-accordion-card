@@ -4,7 +4,7 @@
   "description": "Front-end project",
   "main": "index.js",
   "scripts": {
-    "sass": "node-sass -w scss/ -o css/ --recursive"
+    "sass": "sass --watch scss/style.scss css/style.css"
   },
   "repository": {
     "type": "git",
